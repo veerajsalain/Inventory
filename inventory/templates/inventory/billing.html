@@ -1,0 +1,52 @@
+{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Billing</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h2>Billing Details</h2>
+    <p><strong>Product:</strong> {{ sale.product.name }}</p>
+    <p><strong>Quantity Sold:</strong> {{ sale.quantity }}</p>
+    <p><strong>Price per Unit:</strong> {{ sale.product.price }}</p>
+    <p><strong>Total Price:</strong> {{ sale.total_price }}</p>
+    <p><strong>Date:</strong> {{ sale.date }}</p>
+
+    <button onclick="window.print()">Print Bill</button>
+    <a href="{% url 'product_list' %}">Back to Products</a>
+</body>
+</html> -->
+
+
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/billing.css' %}?v=3">
+</head>
+<body>
+
+    <div class="billing-container">
+        <h2>Billing Details</h2>
+
+        <div class="billing-info">
+            <p><strong>Product:</strong> {{ sale.product.name }}</p>
+            <p><strong>Quantity Sold:</strong> {{ sale.quantity }}</p>
+            <p><strong>Price per Unit:</strong> {{ sale.product.price }}</p>
+            <p><strong>Total Price:</strong> {{ sale.total_price }}</p>
+            <p><strong>Date:</strong> {{ sale.date }}</p>
+        </div>
+
+        <div class="billing-actions">
+            <button onclick="window.print()">Print Bill</button>
+            <a href="{% url 'product_list' %}" class="back-link">Back to Products</a>
+        </div>
+    </div>
+
+</body>
+</html>

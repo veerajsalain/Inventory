@@ -1,0 +1,66 @@
+{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% for sale in sales %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h3>{{ sale.product.name }} - {{ sale.quantity }} sold</h3>
+    <p>Date: {{ sale.date }}</p>
+    <p>Total Price: ${{ sale.total_price }}</p>
+    <hr>
+{% endfor %}
+<a href="{% url 'product_list' %}">Back to Inventory</a>
+ 
+</body>
+</html> -->
+
+
+
+<!-- {% for sale in sales %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <h3>{{ sale.product.name }} - {{ sale.quantity }} sold</h3>
+    <p>Date: {{ sale.date }}</p>
+    <p>Total Price: ${{ sale.total_price }}</p>
+    <hr>
+{% endfor %}
+<a href="{% url 'product_list' %}">Back to Inventory</a> -->
+
+
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales History</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sales_history.css' %}?v=3">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sales History</h1>
+
+        {% for sale in sales %}
+        <div class="sale-card">
+            <h3>{{ sale.product.name }} - {{ sale.quantity }} sold</h3>
+            <p><strong>Date:</strong> {{ sale.date }}</p>
+            <p><strong>Total Price:</strong> ${{ sale.total_price }}</p>
+        </div>
+        <hr>
+        {% empty %}
+        <p>No sales recorded yet.</p>
+        {% endfor %}
+
+        <div class="footer-actions">
+            <a href="{% url 'product_list' %}" class="btn back">Back to Inventory</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Sell {{ product.name }}</h2>
+    <form method="post">
+    
+        {% csrf_token %}
+        <input type="number" name="quantity" min="1" required>
+        <button type="submit">Sell</button>
+    </form>  
+</body>
+</html> -->
+
+
+
+<!-- <h2>Sell {{ product.name }}</h2>
+<form method="post">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    {% csrf_token %}
+    <input type="number" name="quantity" min="1" required>
+    <button type="submit">Sell</button>
+</form> -->
+
+
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Product</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sell.css' %}?v=3">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sell {{ product.name }}</h2>
+
+        <form method="post" class="sell-form">
+            {% csrf_token %}
+            <label for="quantity">Enter Quantity:</label>
+            <input type="number" name="quantity" min="1" required>
+            <button type="submit" class="btn sell-btn">Sell</button>
+        </form>  
+
+        <div class="footer-actions">
+            <a href="{% url 'product_list' %}" class="btn back">Back to Products</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

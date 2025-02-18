@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Low Stock Alert</title>
+</head>
+<body>
+    <h1>Low Stock Products</h1>
+    
+    {% if low_stock_products %}
+        <ul>
+            {% for product in low_stock_products %}
+                <li>{{ product.name }} - Only {{ product.stock }} left!</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No low stock products.</p>
+    {% endif %}
+
+    <a href="{% url 'product_list' %}">Back to Products</a>
+</body>
+</html>
