@@ -34,7 +34,7 @@ h1 {
     color: white;
 }
 
-button {
+/* button {
     padding: 8px 12px;
     background-color: #dc3545;
     color: white;
@@ -44,4 +44,15 @@ button {
 
 button:hover {
     background-color: #c82333;
+} */
+
+.back{
+    padding: 8px 12px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    background-color: #dc3545;
 }

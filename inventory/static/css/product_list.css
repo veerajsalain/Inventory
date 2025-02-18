@@ -127,7 +127,7 @@ h1 {
     color: #333;
 }
 
-.product-table {
+/* .product-table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -158,4 +158,49 @@ button {
 
 button:hover {
     background-color: #218838;
+} */
+
+/* Styling for the product table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Button styles */
+.actions a {
+    padding: 8px 12px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.sell {
+    background-color: green;
+}
+
+.delete {
+    background-color: red;
+}
+
+.add {
+    background-color: blue;
+}
+
+.actions a:hover {
+    opacity: 0.8;
 }

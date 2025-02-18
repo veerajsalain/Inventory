@@ -1,82 +1,5 @@
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-{% for product in products %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <h2>{{ product.name }}</h2>
-    <p>Price: ${{ product.price }}</p>
-    <p>Stock: {{ product.stock }}</p>
-    <a href="{% url 'sell_product' product.id %}">Sell</a> |
-    <a href="{% url 'delete_product' product.id %}">Delete</a>
-    <a href="{% url 'add_stock' product.id %}">Add</a>
-    <hr>
-{% endfor %}
-<a href="{% url 'add_product' %}">Add Product</a>
-<a href="{% url 'sales_history' %}">View Sales History</a> 
-</body>
-</html> -->
-
-
-
-<!-- {% for product in products %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-    <h2>{{ product.name }}</h2>
-    <p>Price: ${{ product.price }}</p>
-    <p>Stock: {{ product.stock }}</p>
-    <a href="{% url 'sell_product' product.id %}">Sell</a> |
-    <a href="{% url 'delete_product' product.id %}">Delete</a>
-    <a href="{% url 'add_stock' product.id %}">Add</a>
-    <hr>
-{% endfor %}
-<a href="{% url 'add_product' %}">Add Product</a>
-<a href="{% url 'sales_history' %}">View Sales History</a> -->
-
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/product_list.css' %}?v=3">
-</head>
-<body>
-
-    <div class="container">
-        <h1>Product List</h1>
-
-        {% for product in products %}
-        <div class="product-card">
-            <h2>{{ product.name }}</h2>
-            <p><strong>Price:</strong> ${{ product.price }}</p>
-            <p><strong>Stock:</strong> {{ product.stock }}</p>
-            <div class="actions">
-                <a href="{% url 'sell_product' product.id %}" class="btn sell">Sell</a>
-                <a href="{% url 'delete_product' product.id %}" class="btn delete">Delete</a>
-                <a href="{% url 'add_stock' product.id %}" class="btn add">Add Stock</a>
-            </div>
-        </div>
-        {% endfor %}
-
-        <div class="footer-actions">
-            <a href="{% url 'add_product' %}" class="btn add-product">Add Product</a>
-            <a href="{% url 'sales_history' %}" class="btn sales-history">View Sales History</a>
-        </div>
-    </div>
-
-</body>
-</html> -->
-
-<!-- {% load static %} -->
-<!DOCTYPE html>
+{% load static %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,7 +9,6 @@
 </head>
 <body>
 
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="footer-actions">
             <a href="{% url 'add_product' %}" class="btn add-product">Add Product</a>
@@ -94,7 +16,6 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="content">
         <div class="container">
             <h1>Product List</h1>
@@ -117,4 +38,60 @@
 </body>
 </html>
 
+ -->
 
+
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product_list.css' %}?v=7">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="footer-actions">
+            <a href="{% url 'add_product' %}" class="btn add-product">Add Product</a>
+            <a href="{% url 'sales_history' %}" class="btn sales-history">View Sales History</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="container">
+            <h1>Product List</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.price }}</td>
+                        <td>{{ product.stock }}</td>
+                        <td class="actions">
+                            <a href="{% url 'sell_product' product.id %}" class="btn sell">Sell</a>
+                            <a href="{% url 'delete_product' product.id %}" class="btn delete">Delete</a>
+                            <a href="{% url 'add_stock' product.id %}" class="btn add">Add Stock</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
@@ -39,4 +39,89 @@ h2 {
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 20px;
+} */
+
+/* Center the billing container */
+.billing-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #f9f9f9;
 }
+
+/* Style the billing information */
+.billing-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.billing-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Center the buttons */
+.billing-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Style the Print button */
+.billing-actions button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.billing-actions button:hover {
+    background-color: #45a049;
+}
+
+/* Style the Back link */
+.back-link {
+    display: inline-block;
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #007bb5;
+}
+
+/* PRINT STYLES: Make the printed bill look clean */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .billing-container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+        background-color: white;
+    }
+
+    .billing-actions {
+        display: none; /* Hide Print and Back buttons */
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
